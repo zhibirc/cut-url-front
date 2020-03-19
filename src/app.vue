@@ -3,6 +3,7 @@
         input(
             type='text'
             placeholder='Enter URL for cut'
+            v-model='url'
         )
 
         button#app-form-reset

@@ -11,7 +11,7 @@
         data: object
     }
 
-    const form: Form = {
+    let form: Form = {
         name: 'form',
         data: {}
     };

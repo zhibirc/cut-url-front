@@ -3,12 +3,10 @@
 </template>
 
 <script lang="ts">
-    const form = require('form');
-
     module.exports = {
         name: 'app',
         components: {
-            form
+            form: require('form')
         }
     };
 </script>

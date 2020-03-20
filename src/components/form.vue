@@ -8,10 +8,10 @@
 <script lang="ts">
     interface Form {
         readonly name: string,
-        data: object
+        data: Object
     }
 
-    let form: Form = {
+    const form: Form = {
         name: 'form',
         data: {}
     };

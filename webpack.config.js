@@ -1,5 +1,6 @@
 'use strict';
 
+const path    = require('path');
 const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -9,33 +10,39 @@ const VueLoaderPlugin   = require('vue-loader/lib/plugin');
 module.exports = {
     entry: './src/main.ts',
     output: {
-        filename: 'build/index.min.js',
-        path: __dirname,
-        publicPath: '/static/'
+        path: path.resolve(__dirname, './build'),
+        publicPath: 'build',
+        filename: 'bundle.js'
     },
     module: {
         rules: [
             {
                 test: /\.tsx?$/,
-                use: 'ts-loader',
+                loader: 'ts-loader',
                 exclude: /node_modules/,
                 options: {
-                    configFileName: 'tsconfig.json',
                     appendTsSuffixTo: [/\.vue$/]
                 }
             },
             {
                 test: /\.vue$/,
-                use: 'vue-loader',
+                use: 'vue-loader'/*,
                 options: {
                     loaders: {
                         ts: 'ts-loader'
                     }
-                }
+                }*/
             },
             {
                 test: /\.css$/,
                 use: ['vue-style-loader', 'css-loader']
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]?[hash]'
+                }
             }
         ]
     },
@@ -46,7 +53,7 @@ module.exports = {
         new VueLoaderPlugin(),
     ],
     resolve: {
-        extensions: ['.tsx', '.ts', '.js']
+        extensions: ['.ts', '.js', '.vue', '.json']
     },
     devtool: 'source-map'
 };

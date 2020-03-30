@@ -3,6 +3,6 @@
 module.exports = {
     name: 'app',
     components: {
-        form: require('src/components/form/form.vue')
+        form: require('../form/form.vue')
     }
 };

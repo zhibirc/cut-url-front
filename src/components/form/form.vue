@@ -7,6 +7,6 @@
     </div>
 </template>
 
-<script src="form.ts" lang="ts"></script>
+<script src="./form.ts" lang="ts"></script>
 
-<style src="form.css"></style>
+<style src="./form.css"></style>

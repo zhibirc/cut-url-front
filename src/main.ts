@@ -1,8 +1,8 @@
 'use strict';
 
-const Vue  = require('vue');
+const Vue = require('vue');
 
 new Vue({
     el: '#app',
-    render: (callback: Function): void => callback(require('src/components/form.vue'))
+    render: (callback: Function): void => callback(require('src/components/app.vue'))
 });

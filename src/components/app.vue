@@ -12,5 +12,7 @@
 </script>
 
 <style scoped>
-
+body {
+    background: center/cover url("../images/bg.jpg") no-repeat;
+}
 </style>

@@ -4,5 +4,5 @@ const Vue = require('vue');
 
 new Vue({
     el: '#app',
-    render: (callback: Function): void => callback(require('src/components/app.vue'))
+    render: (callback: Function): void => callback(require('src/components/app/app.vue'))
 });

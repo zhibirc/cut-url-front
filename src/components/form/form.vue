@@ -7,22 +7,6 @@
     </div>
 </template>
 
-<script lang="ts">
-    interface Form {
-        readonly name: string,
-        data: Object
-    }
+<script src="form.ts" lang="ts"></script>
 
-    const form: Form = {
-        name: 'form',
-        data: {
-            title: ''
-        }
-    };
-
-    module.exports = form;
-</script>
-
-<style scoped>
-
-</style>
+<style src="form.css"></style>

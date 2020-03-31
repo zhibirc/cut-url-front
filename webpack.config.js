@@ -5,6 +5,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin   = require('vue-loader/lib/plugin');
 
+const DEVELOPMENT = 'development';
+const NODE_ENV    = process.env.NODE_ENV || DEVELOPMENT;
 
 module.exports = {
     entry: './src/main.ts',
@@ -59,5 +61,8 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.js', '.vue', '.json']
     },
-    devtool: 'source-map'
+
+    devtool: NODE_ENV === DEVELOPMENT ? 'eval-source-map' : false,
+
+    watch: NODE_ENV === DEVELOPMENT
 };

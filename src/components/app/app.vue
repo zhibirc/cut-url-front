@@ -4,4 +4,4 @@
 
 <script src="./app.ts" lang="ts"></script>
 
-<style src="./app.css"></style>
+<style src="./app.scss" lang="scss"></style>

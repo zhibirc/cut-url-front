@@ -9,4 +9,4 @@
 
 <script src="./form.ts" lang="ts"></script>
 
-<style src="./form.css"></style>
+<style src="./form.scss" lang="scss"></style>

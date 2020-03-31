@@ -1,7 +1,6 @@
 'use strict';
 
-const path    = require('path');
-const webpack = require('webpack');
+const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin   = require('vue-loader/lib/plugin');
@@ -10,10 +9,10 @@ const VueLoaderPlugin   = require('vue-loader/lib/plugin');
 module.exports = {
     entry: './src/main.ts',
     output: {
-        path: path.resolve(__dirname, './build'),
-        publicPath: 'build',
+        path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js'
     },
+    target: 'web',
     module: {
         rules: [
             {
@@ -34,16 +33,21 @@ module.exports = {
                 }*/
             },
             {
-                test: /\.css$/,
-                use: ['vue-style-loader', 'css-loader']
-            },
+                test: /\.s[ac]ss$/,
+                use: [
+                    'style-loader',
+                    'vue-style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ]
+            }/*,
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,
                 loader: 'file-loader',
                 options: {
                     name: '[name].[ext]?[hash]'
                 }
-            }
+            }*/
         ]
     },
     plugins: [

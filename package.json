@@ -1,5 +1,5 @@
 {
-    "name": "cut-url-front",
+    "name": "pumpkins-front",
     "version": "1.0.0",
     "description": "",
     "author": {
@@ -9,7 +9,7 @@
     "private": true,
     "scripts": {
         "build": "webpack",
-        "build:develop": "webpack --mode development",
+        "build:develop": "DEVELOP=true webpack",
         "serve": "webpack-dev-server --mode development",
         "test": "mocha -r ts-node/register tests/**/*.spec.ts"
     },
@@ -39,6 +39,10 @@
         "webpack-cli": "^3.3.11",
         "webpack-dev-server": "^3.10.3"
     },
-    "keywords": [],
+    "keywords": [
+        "SPA",
+        "URL shortener",
+        "pumpkins"
+    ],
     "license": "MIT"
 }

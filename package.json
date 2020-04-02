@@ -8,8 +8,8 @@
     },
     "private": true,
     "scripts": {
-        "build": "webpack",
-        "build:develop": "DEVELOP=true webpack",
+        "build": "webpack --mode production",
+        "build:develop": "DEVELOP=true webpack --mode development",
         "serve": "webpack-dev-server --mode development",
         "test": "mocha -r ts-node/register tests/**/*.spec.ts"
     },

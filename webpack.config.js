@@ -1,12 +1,11 @@
 'use strict';
 
-const path = require('path');
-
+const path              = require('path');
+const webpack           = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin   = require('vue-loader/lib/plugin');
 
-const DEVELOPMENT = 'development';
-const NODE_ENV    = process.env.NODE_ENV || DEVELOPMENT;
+const DEVELOP = Boolean(process.env.DEVELOP) || false;
 
 module.exports = {
     entry: './src/main.ts',
@@ -57,12 +56,15 @@ module.exports = {
             template: './src/index.html',
         }),
         new VueLoaderPlugin(),
+        new webpack.DefinePlugin({
+            DEVELOP: DEVELOP
+        })
     ],
     resolve: {
         extensions: ['.ts', '.js', '.vue', '.json']
     },
 
-    devtool: NODE_ENV === DEVELOPMENT ? 'eval-source-map' : false,
+    devtool: DEVELOP && 'eval-source-map',
 
-    watch: NODE_ENV === DEVELOPMENT
+    watch: DEVELOP
 };

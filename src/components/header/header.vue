@@ -2,12 +2,6 @@
 
 </template>
 
-<script>
-    export default {
-        name: "header"
-    }
-</script>
+<script src="./header.ts" lang="ts"></script>
 
-<style scoped>
-
-</style>
+<style src="./header.scss" lang="scss"></style>

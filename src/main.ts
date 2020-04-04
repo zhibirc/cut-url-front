@@ -1,6 +1,7 @@
 'use strict';
 
 const Vue = require('vue');
+const app = require('./components/app/app');
 const style = require('./main.scss');
 
 Vue.config.silent   = !DEVELOP;
@@ -16,10 +17,10 @@ Vue.config.errorHandler = function ( error, vm, info ) {
     console.info(info);
 };
 
-const app = new Vue({
+new Vue({
     el: '#app',
     data: {
         version: ''
     },
-    render: (callback: Function): void => callback(require('./components/app/app.vue'))
+    render: (callback: Function): void => callback(app)
 });

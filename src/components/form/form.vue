@@ -1,9 +1,15 @@
 <template>
     <div id="form">
-        <input placeholder="Enter URL for cut" v-bind:title="title" v-model="url">
-        <button id="#app-form-reset"></button>
-        <button id="app-form-copy"></button>
-        <button id="app-form-cut"></button>
+        <input
+            placeholder="Enter URL for cut"
+            :value="value"
+            v-on="listeners"
+            v-bind:title="title"
+            v-model="url"
+        >
+        <button id="#app-form-reset" @click="resetInputValue"></button>
+        <button id="app-form-copy" @click="copyInputValue"></button>
+        <button id="app-form-create" @click="createPumpkin"></button>
     </div>
 </template>
 

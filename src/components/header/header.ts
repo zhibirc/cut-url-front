@@ -5,7 +5,7 @@ interface Header {
     data: Object
 }
 
-const header: Form = {
+const header: Header = {
     name: 'header',
     data: {
         title: ''
